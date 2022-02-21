@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d0044;
+}
+
+.timer-container {
+  font-size: 1.5rem;
+  color: #0d0044;
+  font-weight: 700;
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.overflow{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #0d0044;
+  opacity: .6;
+}
+
+.overflow--bottom {
+  bottom: 0;
+  height: 50%;
+}
+
+.overflow--top {
+  top: 0;
+  height: 40%;
+}
+
+.timer-bar {
+  transform: translateY(40%);
+}
+
+.timer-bar_seconds--right {
+  animation: timer--0-9 10s steps(10, end) infinite;
+}
+
+.timer-bar_seconds--left {
+  animation: timer--0-5 60s steps(6, end) infinite;
+}
+
+.timer-bar_minutes--right {
+  animation: timer--0-9 600s steps(10, end) infinite;
+}
+
+.timer-bar_minutes--left {
+  animation: timer--0-5 3600s steps(6, end) infinite;
+}
+
+.timer-bar_hour--right {
+  animation: timer--0-9 36000s steps(10, end) infinite;
+}
+
+.timer-bar_hour--left {
+  animation: timer--0-2 108000s steps(3, end) infinite;
+}
+
+.time-bar_number {
+  padding: 0.5rem 1rem;
+  background-color: #fdca35;
+  border-radius: 10rem;
+}
+
+.timer-divisor {
+  display: flex;
+  position: relative;
+}
+
+.show-time {
+  position: absolute;
+  top: 45%;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid rgb(252, 200, 54);
+  transform: translate(-1.5%, -50%);
+  border-radius: 10rem;
+  z-index: 2;
+  box-shadow: 0 0 0.6rem rgba(252, 200, 54, 0.6);
+}
+
+.show-time--right {
+  left: 50%;
+}
+
+.show-time--left {
+  left: 0;
+}
+
+@keyframes timer--0-9 {
+  0% {
+    transform: translateY(40%);
+  }
+
+  100% {
+    transform: translateY(-60%);
+  }
+}
+
+@keyframes timer--0-5 {
+  0% {
+    transform: translateY(40%);
+  }
+
+  100% {
+    transform: translateY(-20%);
+  }
+}
+
+@keyframes timer--0-2 {
+  0% {
+    transform: translateY(40%);
+  }
+
+  100% {
+    transform: translateY(10%);
+  }
+}
